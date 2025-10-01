@@ -13,27 +13,43 @@ function getColumnsDesired() {
     return Number(document.getElementById("cols").value)
 }
 
-function createWithHtmlTable(rows, cols) {
+function getHighlightValue() {
+    let highlightValue = document.getElementById("highlight").value
+
+    if (highlightValue !== '') {
+        return Number(highlightValue)
+    }
+}
+
+function createWithHtmlTable(rows, cols, highlight) {
     let string
     if (rows && cols) {
         string = "<table\n"
 
         for (let row = 1; row <= rows; row++) {
-            string += "<tr>\n"
 
+            if (highlight && highlight === row) {
+                string += "<tr class='highlight'>\n"
+            } else {
+                string += "<tr>\n"
+            }
 
             for (let col = 1; col <= cols; col++) {
-                string += "<td>"
+                if (highlight && highlight === col) {
+                    string += "<td class='highlight'>\n"
+                } else {
+                    string += "<td>\n"
+                }
+
                 string += row * col
                 string += "</td>\n"
             }
-            string += "</tr>\n"
         }
 
         string += "</table>\n"
 
     } else {
-        string = 'Provide some inputs'
+        string = 'Provide some inputs' //set value of "string" variable to "Provide some inputs"
     }
 
     document.getElementById("output").innerHTML = string;
