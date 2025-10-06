@@ -59,9 +59,11 @@ section.container {
                 &:first-of-type,
                 &:last-of-type {
                     background: mediumpurple;
-                 }
                 }
             }
+        }
+        tr:hover {
+            background-color: lightgreen;
         }
     }
 }

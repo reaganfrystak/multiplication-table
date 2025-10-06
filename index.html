@@ -14,17 +14,17 @@
 
     <div class="generate-box">
         <div class="inputs">
-             <label for="rows">Rows:
+             <div class="rows">Rows:
                 <input id="rows" type="number" value="10" placeholder="How many rows?"/>
-             </label>
+             </div>
 
-            <label for="cols">Columns:
+            <div class="cols"">Columns:
                 <input id="cols" type="number" value="10" placeholder="How many cols?"/>
-            </label>
+            </div>
 
-            <label for="highlight">Highlights:
+            <div class="highlight">Highlights:
                 <input id="highlight" type="number" placeholder="Highlight row and col?"/>
-            </label>
+            </div>
     </div>
 
     <button id="generate" onclick="createWithHtmlTable(getRowsDesired(), getColumnsDesired(), getHighlightValue())">Generate Table!</button>
