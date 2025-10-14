@@ -2,95 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flexbox Grid Example</title>
-
-    <style>
-        section.columns-of-rows {
-            display: flex;
-            flex-direction: row;
-
-            div {
-                border: 1px solid black;
-            }
-        }
-
-        section.rows-of-columns {
-            border: 1px solid black;
-            padding: 4px;
-
-            div.row {
-                display: flex;
-                justify-content: space-between;
-                border: 1px solid black;
-                padding: 4px;
-
-                div {
-                    border: 1px solid black;
-                }
-            }
-
-            div {
-                border: 1px solid black;
-            }
-        }
-    </style>
+    <title>Flexbox Multiplication Table</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
+
 <body>
+<section class="container">
+    <h1>Flexbox Multiplication Table &#9996</h1>
+    <h3>Create your own multiplication table using Flexbox!</h3>
 
-<h1>Tic Tac Toe Style Grid Using Three Columns of Three Rows</h1>
+    <div class="generate-box">
+        <div class="inputs">
+            <div class="rows">
+                Rows: <input id="rows" type="number" value="10" placeholder="How many rows?">
+            </div>
 
-<section class="columns-of-rows">
-    <div>
-        <div>row 1</div>
-        <div>row 2</div>
-        <div>row 3</div>
+            <div class="cols">
+                Columns: <input id="cols" type="number" value="10" placeholder="How many columns?">
+            </div>
+
+            <div class="highlight">
+                Highlights: <input id="highlight" type="number" placeholder="Highlight row and col?">
+            </div>
+        </div>
+
+        <button id="generate"
+                onclick="createWithFlexboxGrid(getRowsDesired(), getColumnsDesired(), getHighlightValue())">
+            Generate Table!
+        </button>
+
     </div>
 
-    <div>
-        <div>row 1</div>
-        <div>row 2</div>
-        <div>row 3</div>
-    </div>
-
-    <div>
-        <div>row 1</div>
-        <div>row 2</div>
-        <div>row 3</div>
-    </div>
-
-    <style>
-        section.columns-of-rows {
-            display: flex;
-
-            div {
-                border: 1px solid black;
-            }
-        }
-    </style>
+    <div id="output"></div>
 
 </section>
 
-<h1>Tic Tac Toe Style Grid Using Three Rows of Three Columns</h1>
-
-<section class="rows-of-columns">
-    <div class="row">
-        <div>col 1</div>
-        <div>col 2</div>
-        <div>col 3</div>
-    </div>
-
-    <div class="row">
-        <div>col 1</div>
-        <div>col 2</div>
-        <div>col 3</div>
-    </div>
-
-    <div class="row">
-        <div>col 1</div>
-        <div>col 2</div>
-        <div>col 3</div>
-    </div>
-</section>
-
+<script src="javascript.js"></script>
 </body>
 </html>
