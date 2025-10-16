@@ -1,50 +1,33 @@
 function getRowsDesired() {
-    return +document.getElementById("rows").value;
+    return parseInt(document.getElementById("rows").value)
 }
 
 function getColumnsDesired() {
-    return +document.getElementById("cols").value;
+    return parseInt(document.getElementById("cols").value)
 }
 
-function getHighlightValue() {
-    const value = document.getElementById("highlight").value;
-    return value ? +value : null;
-}
-
-function createWithFlexboxGrid(rows, cols, highlight) {
-    const output = document.getElementById("output");
-    output.innerHTML = ""; // Clear previous table
+function createWithFlexbox(rows, cols) {
+    let string = ''
 
 
-    if (!rows || !cols) {
-        output.textContent = "Provide some inputs";
-        return;
-    }
+    let row = 1
+    do {
+        string += "<div class='row'>"
+        string += row
 
 
-    const grid = document.createElement("section");
-    grid.className = "rows-of-columns";
+        let col = 1
+        do {
+            string += "<div class='col'>"
+            string += row * col
+            string += "</div>"
 
+            col = col + 1
+        } while (col <= cols)
+        string += "</div>\n"
 
-    for (let r = 1; r <= rows; r++) {
-        const rowDiv = document.createElement("div");
-        rowDiv.className = "row"; // Each row is also flex
+        row = row + 1;
+    } while (row <= rows)
 
-
-        for (let c = 1; c <= cols; c++) {
-            const cell = document.createElement("div");
-            cell.textContent = r * c;
-
-
-            if (highlight && (r === highlight || c === highlight)) {
-                cell.classList.add("highlight");
-            }
-
-            rowDiv.appendChild(cell);
-        }
-
-        grid.appendChild(rowDiv);
-    }
-
-    output.appendChild(grid);
+    document.getElementById("output").innerHTML = string
 }

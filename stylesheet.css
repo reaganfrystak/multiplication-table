@@ -1,94 +1,42 @@
 section.container {
+    width: 70vw;section.container {
     width: 70vw;
     height: 100vh;
     margin: 0 auto;
-    border: 1px solid black;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 
-    h1, h3{
-        font-family: "Fruit Juice", "Barlow Condensed";
-    }
-
-
     .generate-box {
         display: flex;
-        gap: 20px;
-        align-items: center;
+        gap: 10px;
 
         .inputs {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            font-family: Lato;
+            gap: 5px;
 
             label {
                 display: flex;
-                justify-content: space-between;
                 gap: 10px;
+                justify-content: space-between;
             }
-        }
-
-        button {
-            background-color: coral;
-            border: 1px solid black;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-family: "Lato";
         }
     }
 
     #output {
-        overflow: scroll;
-        max-width: 90vw;
-        max-height: 60vh;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 
-        .rows-of-columns {
+        .row {
             display: flex;
-            flex-direction: column;
-            border: 1px solid black;
-            border-collapse: collapse;
+            justify-content: center;
+            gap: 5px;
 
-            .row {
-                display: flex;
-                flex-direction: row;
-
-                div {
-                    border: 1px solid black;
-                    width: 40px;
-                    height: 40px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    font-family: "Lato";
-
-
-                    &:first-of-type,
-                    &:last-of-type {
-                        background-color: cornflowerblue;
-                        color: white;
-                    }
-                }
-
-                .highlight {
-                    background-color: coral;
-                    font-weight: bold;
-                }
-
-                &:hover div {
-                    background-color: palegoldenrod;
-                }
-            }
-
-            .row:first-of-type div,
-            .row:last-of-type div {
-                background-color: lightskyblue;
-            }
         }
     }
 }
-
